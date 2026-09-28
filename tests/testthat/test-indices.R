@@ -103,7 +103,14 @@ test_that("struct_shift печатается и рисуется", {
   expect_equal(nrow(summary(res)), 10L)
   expect_equal(sum(res$table$contribution), 100)
   expect_output(print(struct_shift(export_firm_n, type = "difference")), "K_D")
+})
+
+test_that("plot рисует график", {
+  # На CI-машинах графические устройства часто работают без поддержки кириллицы.
+  skip_on_ci()
+  skip_on_cran()
   skip_if_not(capabilities("cairo"))
+  res <- struct_shift(export_firm_n)
   grDevices::png(tempfile(fileext = ".png"), type = "cairo")
   on.exit(grDevices::dev.off())
   expect_no_error(suppressWarnings(plot(res)))
