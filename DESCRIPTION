@@ -1,0 +1,27 @@
+Package: structshift
+Type: Package
+Title: Measures of Structural Shifts and Differences (Gatev, Ryabtsev, Kazinets, Szalai)
+Version: 0.1.0
+Authors@R:
+    person("Kirill", "Astrakhantsev", email = "astrakhantsev.ka@gmail.com",
+           role = c("aut", "cre"))
+Description: Computes summary measures of structural shifts (changes of a
+    structure over time) and structural differences (between two structures
+    at the same moment): the integral coefficient of structural changes by
+    K. Gatev, the index of V. M. Ryabtsev with its interpretation scale,
+    linear and quadratic coefficients of L. S. Kazinets, the normalized
+    coefficients of Gatev, the index of dissimilarity and the index of
+    A. Szalai. Results are printed with a step-by-step calculation table
+    in Russian, suitable for teaching statistics and economic analysis.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Language: ru
+Depends: R (>= 4.1.0)
+Imports: graphics, stats
+Suggests: testthat (>= 3.0.0)
+Config/testthat/edition: 3
+LazyData: true
+Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.1.0
+URL: https://github.com/astrageek/structshift
+BugReports: https://github.com/astrageek/structshift/issues
