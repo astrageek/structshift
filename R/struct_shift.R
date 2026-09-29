@@ -140,8 +140,9 @@ print.struct_shift <- function(x, digits = 4, ...) {
   cat("\nОценка по шкале Рябцева (I_R = ", .fmt(x$ryabtsev, 3), "): ",
       x$interpretation, ".\n", sep = "")
   top <- t$element[which.max(t$contribution)]
+  noun <- if (x$type == "shift") "сдвиг" else "различие"
   if (sum(t$diff_sq) > 0) {
-    cat("Наибольший вклад в сдвиг: ", top, " (",
+    cat("Наибольший вклад в ", noun, ": ", top, " (",
         .fmt(max(t$contribution), 1), " % суммы квадратов разностей).\n", sep = "")
   }
   invisible(x)
@@ -183,7 +184,7 @@ plot.struct_shift <- function(x, main = NULL, col = c("#9DB4C0", "#1F5F8B"), ...
   on.exit(graphics::par(old))
   graphics::barplot(m, beside = TRUE, horiz = TRUE, las = 1, col = col,
                     xlab = "Доля, %", main = main, legend.text = x$labels,
-                    args.legend = list(x = "bottomright", bty = "n"), ...)
+                    args.legend = list(x = "right", bty = "n", inset = 0.02), ...)
   invisible(x)
 }
 
